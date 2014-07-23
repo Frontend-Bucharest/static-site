@@ -1,0 +1,201 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+
+// bower:scss
+@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+// endbower
+
+body { font-family: "Georgia"; font-size: 12px; }
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header {
+    li {
+        display: inline-block;
+    }
+    a {
+        display: inline-block;
+        padding: 10px;
+    }
+}
+
+h1, h2 {
+    font-size: 2.5em;
+}
+
+.logo {
+    font-weight: normal;
+
+    &__highlight {
+        font-weight: bold;
+    }
+}
+
+$themeColor1: #04d0b6;
+$themeColor2: #df9c0b;
+$themeColor3: #333333;
+
+.count {
+    &__highlight {
+        font-weight: bold;
+        font-size: 4em;
+        line-height: 50px;
+        display: block;
+    }
+    &__edition,
+    &__of  {
+        margin-left: 6px;
+        letter-spacing: 6px;
+        display: block;
+    }
+}
+
+section {
+    padding: 100px 0 100px;
+    position: relative;
+}
+
+section#info {
+    padding-top: 0;
+    header {
+        margin-bottom: 100px;
+    }
+}
+
+section#meetup {
+    background-color: $themeColor1;
+    li {
+        margin-bottom: 40px;
+    }
+}
+
+section#speakers {
+    background-color: $themeColor2;
+
+    header {
+        margin-bottom: 60px;
+    }
+}
+
+.speaker {
+    &__head {
+        text-align: center;
+    }
+
+    margin-bottom: 60px;
+
+}
+
+section#contact {
+    padding-top: 300px;
+    background: url(../images/hand.png) no-repeat center 20px;
+    background-color: $themeColor3;
+    color: #fff;
+
+    h2,h3 {
+        color: $themeColor2;
+    }
+}
+
+#mic-visual {
+    display: none;
+    position: absolute;
+    left: 29%;
+    top: -8%;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+
+    body {
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 3em;
+    }
+
+    .speaker {
+        .speaker__head {
+            text-align: left;
+            float: left;
+        }
+    }
+
+    .speaker:nth-child(even) {
+        text-align: right;
+        .speaker__head {
+            text-align: right;
+            float: right;
+        }
+    }
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+
+    .speaker {
+        .speaker__head {
+            float: right;
+            text-align: left;
+        }
+    }
+
+    .speaker:nth-child(even) {
+        text-align: right;
+        .speaker__head {
+            float: left;
+            text-align: right;
+        }
+    }
+
+    .speaker:nth-child(even) {
+        .speaker__topics {
+            float: left;
+        }
+        .speaker__bio {
+            float: right;
+            background-position: right top;
+        }
+    }
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
+    #mic-visual {
+        display: block;
+    }
+
+    #speakers-head {
+        margin-top: 100px;
+    }
+
+    .speaker {
+        &__bio,
+        &__topics {
+            padding-top: 100px;
+        }
+
+        &__topics {
+            // width: 40%;
+        }
+
+        &__bio {
+            background: url(../images/bio.png) no-repeat left top;
+        }
+    }
+
+    .speaker:nth-child(even) {
+        .spaker__topics {
+            float: right;
+        }
+    }
+
+}
